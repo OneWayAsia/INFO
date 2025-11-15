@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: #d94e47;
+  --dark-bg: #252525;
+  --darker-bg: #222222;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  
+  /* Scroll snap */
+  --scroll-snap-align: start;
+  --scroll-snap-stop: normal;
+  --scroll-margin: 0;
+  
+  /* Navigation */
+  --nav-indicator-size: 12px;
+  --nav-indicator-spacing: 15px;
+  --nav-indicator-mobile-size: 10px;
+  --nav-indicator-mobile-spacing: 25px;
+  
+  /* Typography */
+  --font-size-large: 4.5rem;
+  --font-size-large-mobile: 2.8rem;
+  --font-size-intro-text: 1.5rem;
+  --font-size-intro-text-mobile: 1.2rem;
+  
+  /* Spacing */
+  --section-padding: 60px;
+  --section-padding-tablet: 40px;
+  --section-padding-mobile: 30px 20px;
+  --content-gap: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 0;
+  }
+  50%, 100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Typography */
+.title {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.title.large {
+  font-size: var(--font-size-large);
+  font-weight: 200;
+}
+
+.title.intro-text {
+  font-size: var(--font-size-intro-text);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.title.small {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title.large {
+    font-size: var(--font-size-large-mobile);
+  }
+
+  .title.intro-text {
+    font-size: var(--font-size-intro-text-mobile);
+  }
+}
